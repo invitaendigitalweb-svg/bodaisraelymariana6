@@ -244,6 +244,120 @@
       cursor: pointer;
     }
 
+    /* ITINERARIO */
+    .itinerario-container {
+      width: 100%;
+      padding: 20px 20px 30px 20px;
+      background-color: transparent;
+      transform: translateZ(0);
+    }
+
+    .itinerario-wrapper {
+      max-width: 360px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .itinerario {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .itinerario::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      bottom: 15px;
+      left: 75px;
+      width: 2px;
+      background: linear-gradient(180deg, #A68B5B 0%, #8C6D46 100%);
+      z-index: 1;
+    }
+
+    .evento {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .lado-izq {
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .lado-izq .icono {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #A68B5B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(140, 109, 70, 0.15);
+      padding: 8px;
+    }
+
+    .lado-izq .icono img,
+    .lado-izq .icono svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .punto {
+      width: 12px;
+      height: 12px;
+      background-color: #8C6D46;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      margin: 0 10px;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 2px #A68B5B;
+    }
+
+    .lado-der {
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .lado-der .hora {
+      font-family: 'Cinzel', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #8C6D46;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .lado-der .titulo-evento {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #001F3F;
+      margin-top: 3px;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .lado-der .momento {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 500;
+      font-style: italic;
+      color: #001F3F;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
     /* ESTILOS DEL MODAL DE LISTA DE REGALOS */
     .modal-regalos {
       display: none;
@@ -932,6 +1046,91 @@
         </div>
         <div class="image-section scale-up reveal-section">
             <img src="https://i.imgur.com/SOorY9D.png" alt="Fotografía 5">
+        </div>
+
+        <!-- 8.1 SECCIÓN ITINERARIO (IMAGEN + LISTA DINÁMICA DE EVENTOS) -->
+        <div class="image-section fade-up reveal-section">
+            <img src="itinerario.png" alt="Itinerario">
+        </div>
+
+        <div class="itinerario-container">
+            <div class="itinerario-wrapper">
+                <div class="itinerario">
+
+                    <div class="evento fade-up reveal-section">
+                        <div class="lado-izq">
+                            <div class="icono">
+                                <svg viewBox="0 0 24 24" fill="#8C6D46">
+                                    <path d="M11 2h2v3h3v2h-3v3h-2V7H8V5h3V2zm-2 9h6l5 3v8H4v-8l5-3zm3 2a2 2 0 0 0-2 2v5h4v-5a2 2 0 0 0-2-2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="punto"></div>
+                        <div class="lado-der">
+                            <span class="hora">5:00 p. m.</span>
+                            <strong class="titulo-evento">Ceremonia</strong>
+                            <span class="momento">Comenzamos nuestro camino<br>Con la bendición de Dios.</span>
+                        </div>
+                    </div>
+
+                    <div class="evento fade-up reveal-section">
+                        <div class="lado-izq">
+                            <div class="icono">
+                                <img src="https://i.imgur.com/5iX5qn7.png" alt="Recepción">
+                            </div>
+                        </div>
+                        <div class="punto"></div>
+                        <div class="lado-der">
+                            <span class="hora">7:00 p. m.</span>
+                            <strong class="titulo-evento">Recepción</strong>
+                            <span class="momento">Bienvenidos a una noche muy especial.</span>
+                        </div>
+                    </div>
+
+                    <div class="evento fade-up reveal-section">
+                        <div class="lado-izq">
+                            <div class="icono">
+                                <img src="https://i.imgur.com/BzUQM62.png" alt="Cena">
+                            </div>
+                        </div>
+                        <div class="punto"></div>
+                        <div class="lado-der">
+                            <span class="hora">7:30 p. m.</span>
+                            <strong class="titulo-evento">Cena</strong>
+                            <span class="momento">Un momento para compartir y disfrutar.</span>
+                        </div>
+                    </div>
+
+                    <div class="evento fade-up reveal-section">
+                        <div class="lado-izq">
+                            <div class="icono">
+                                <img src="https://i.imgur.com/qb2QFsO.png" alt="A bailar">
+                            </div>
+                        </div>
+                        <div class="punto"></div>
+                        <div class="lado-der">
+                            <span class="hora">9:00 p. m.</span>
+                            <strong class="titulo-evento">Todo el mundo a bailar</strong>
+                            <span class="momento">Que comience la fiesta.</span>
+                        </div>
+                    </div>
+
+                    <div class="evento fade-up reveal-section">
+                        <div class="lado-izq">
+                            <div class="icono">
+                                <img src="https://i.imgur.com/06wV2Qn.png" alt="Fin del evento">
+                            </div>
+                        </div>
+                        <div class="punto"></div>
+                        <div class="lado-der">
+                            <span class="hora">3:00 a. m.</span>
+                            <strong class="titulo-evento">Fin del evento</strong>
+                            <span class="momento">Gracias por ser parte de nuestra historia.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <!-- 9. MESA DE REGALOS (PNG) -->
